@@ -23,7 +23,8 @@ def get_user_input_list(message):
 
 def get_data(filepath):
     with io.open(filepath, mode="r") as file:
-        data = [line for line in csv.reader(file)]
+        interim = [line for line in csv.reader(file)]
+        data = [line for line in interim[1:]]
 
     return data
 
