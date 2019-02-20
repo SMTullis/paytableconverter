@@ -15,7 +15,7 @@ class PayTable:
 
 
 def get_data(filepath):
-    with io.open("C:/Users/stullis/Downloads/paytables.csv", mode="r") as file:
+    with io.open(filepath, mode="r") as file:
         data = [line for line in csv.reader(file)]
 
     return data
