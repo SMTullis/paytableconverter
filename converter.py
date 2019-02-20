@@ -35,15 +35,11 @@ def write_to_csv(data, filepath):
         writer.writerows(data)
 
 def pivot_section(section):
-    pivoted_table = []
-    for line in section:
-        pivot_point = line[:2]
-        for x in range(3, 31, 3):
-            pivoted_table.append(
-                pivot_point + [x // 3,] + line[x - 1:x + 2]
-            )
-
-    return pivoted_table
+    return [
+        [line[:2] + [x // 3,] + line[x - 1:x + 2]
+        for line in section for x in range(3, 31, 3)
+        ]
+    ]
 
 def main():
     converted_paytables = PayTable("TABLE", "GRADE", "STEP", "ANNUAL", "HOURLY", "OVERTIME")
