@@ -4,13 +4,13 @@ import io
 class PayTable:
 
     def __init__(self, *header):
-        data = [header, ]
+        self.data = [header, ]
 
     def append(self, *row):
-        data.append(row)
+        self.data.append(row)
 
     def output_to_csv(self):
-        return data
+        return self.data
 
 def get_user_input_list(message):
     out = []
