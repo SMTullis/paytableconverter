@@ -26,4 +26,6 @@ def write_to_csv(data, filepath):
         writer.writerows(data)
 
 def main():
-    pass
+    converted_paytables = PayTable("TABLE", "GRADE", "STEP", "ANNUAL", "HOURLY", "OVERTIME")
+
+    data = get_data("C:/Users/stullis/Downloads/paytables.csv")
