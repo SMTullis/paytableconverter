@@ -20,7 +20,10 @@ def get_data(filepath):
 
     return data
 
-
+def write_to_csv(data, filepath):
+    with io.open(filepath, mode = "w+") as file:
+        writer = csv.writer(file)
+        writer.writerows(data)
 
 def main():
     pass
