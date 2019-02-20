@@ -10,6 +10,9 @@ class PayTable:
     def append(self, *row):
         data.append(row)
 
+    def output_to_csv(self):
+        return data
+
 
 def get_data(filepath):
     with io.open("C:/Users/stullis/Downloads/paytables.csv", mode="r") as file:
