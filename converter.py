@@ -20,6 +20,8 @@ def get_user_input_list(message):
         if user_input.lower() in ["quit", "q", "exit", "n", "no"]:
             return out
 
+        out.append(user_input)
+
 def get_data(filepath):
     with io.open(filepath, mode="r") as file:
         interim = [line for line in csv.reader(file)]
