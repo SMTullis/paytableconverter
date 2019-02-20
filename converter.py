@@ -54,3 +54,6 @@ def main():
 
     for file in file_list:
         data = get_data(file)
+        converted_paytables.append(pivot_section(data))
+
+    write_to_csv(converted_paytables.output_to_csv(), file_list[0].replace(".csv", "_2.csv"))
