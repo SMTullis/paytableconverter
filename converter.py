@@ -7,7 +7,7 @@ class PayTable:
         self.data = [header, ]
 
     def append(self, *row):
-        self.data.append(row)
+        self.data.extend(row)
 
     def output_to_csv(self):
         return self.data
