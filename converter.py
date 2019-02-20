@@ -40,7 +40,7 @@ def pivot_section(section):
         pivot_point = line[:2]
         for x in range(3, 31, 3):
             pivoted_table.append(
-                pivot_point + [x // 3,] + line[x:x+2]
+                pivot_point + [x // 3,] + line[x - 1:x + 2]
             )
 
     return pivoted_table
