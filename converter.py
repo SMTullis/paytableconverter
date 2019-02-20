@@ -33,6 +33,17 @@ def write_to_csv(data, filepath):
         writer = csv.writer(file)
         writer.writerows(data)
 
+def pivot_section(section):
+    pivoted_table = []
+    for line in section:
+        pivot_point = line[:2]
+        for x in range(3, 31, 3):
+            pivoted_table.append(
+                pivot_point + [x // 3,] + line[x:x+2]
+            )
+
+    return pivoted_table
+
 def main():
     converted_paytables = PayTable("TABLE", "GRADE", "STEP", "ANNUAL", "HOURLY", "OVERTIME")
 
