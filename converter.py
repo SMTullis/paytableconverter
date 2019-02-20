@@ -13,6 +13,13 @@ class PayTable:
     def output_to_csv(self):
         return data
 
+def get_user_input_list(message):
+    out = []
+    while True:
+        input(message)
+
+        if message.lower() in ["quit", "q", "exit", "n", "no"]:
+            return out
 
 def get_data(filepath):
     with io.open(filepath, mode="r") as file:
@@ -28,4 +35,9 @@ def write_to_csv(data, filepath):
 def main():
     converted_paytables = PayTable("TABLE", "GRADE", "STEP", "ANNUAL", "HOURLY", "OVERTIME")
 
-    data = get_data("C:/Users/stullis/Downloads/paytables.csv")
+    file_list = get_user_input_list(
+        "Please enter the filepath for each file or [q]uit to exit."
+    )
+
+    for file in file_list:
+        data = get_data(file)
