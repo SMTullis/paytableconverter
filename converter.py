@@ -15,9 +15,9 @@ class PayTable:
 def get_user_input_list(message):
     out = []
     while True:
-        input(message)
+        user_input = input(message)
 
-        if message.lower() in ["quit", "q", "exit", "n", "no"]:
+        if user_input.lower() in ["quit", "q", "exit", "n", "no"]:
             return out
 
 def get_data(filepath):
