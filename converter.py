@@ -1,5 +1,4 @@
 import csv
-import decimal
 import io
 
 class PayTable:
