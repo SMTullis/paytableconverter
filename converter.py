@@ -36,9 +36,8 @@ def write_to_csv(data, filepath):
 
 def pivot_section(section):
     return [
-        [line[:2] + [x // 3,] + line[x - 1:x + 2]
+        line[:2] + [x // 3,] + line[x - 1:x + 2]
         for line in section for x in range(3, 31, 3)
-        ]
     ]
 
 def main():
